@@ -2,9 +2,9 @@ from flask import Flask, request
     
 from app.database import task
 
-import sys
-import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# import sys
+# import os
+# sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 app = Flask(__name__)
 
@@ -33,11 +33,11 @@ def get_single_task(pk):
     }
     return out, 404
 
-    @app.post("/tasks")
-    def create_task():
-        task_data = request.json
-        task.insert(task_data)
-        return "", 204
+@app.post("/tasks")
+def create_task():
+    task_data = request.json
+    task.insert(task_data)
+    return "", 204
 
 @app.put("/tasks/<int:pk>/")
 def update_task(pk):

@@ -45,7 +45,7 @@ def insert(task_data):
         ) VALUES (?,?,?)
     """
     conn = get_db()
-    con.execute(statement, taks_tuple)
+    conn.execute(statement, task_tuple)
     conn.commit()
 
 def update_by_id(task_data, task_id):
