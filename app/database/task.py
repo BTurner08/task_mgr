@@ -26,7 +26,7 @@ def select_by_id(task_id):
     results = cursor.fetchall()
     cursor.close()
     if results:
-        return output_formatter(results)
+        return output_formatter(results)[0]
     return {}
 
 def insert(task_data):
@@ -44,7 +44,7 @@ def insert(task_data):
         ) VALUES (?,?,?)
     """
     conn = get_db()
-    con.execute(statement,taks_tuple)
+    con.execute(statement, taks_tuple)
     conn.commit()
 
 def update_by_id(task_data, task_id):
