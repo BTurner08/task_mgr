@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 from flask import Flask
 
 app = Flask(__name__)
@@ -13,7 +13,7 @@ def about():
     }
 
     return me
-=======
+    
 from flask import (
     Flask,
     request
@@ -56,4 +56,4 @@ def update_task(pk):
 def delete_task(pk):
     task.delete_by_id(pk)
     return "", 204
->>>>>>> 8926d03 (First commit)
+
