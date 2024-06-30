@@ -8,7 +8,3 @@ def get_db():
     if not db:
         db = g._database = sqlite3.connect(DATABASE_URL)
     return db
-
-def create_app():
-    from . import routes
-    return routes.app

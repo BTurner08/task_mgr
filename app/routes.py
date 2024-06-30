@@ -1,7 +1,10 @@
-from flask import (
-    Flask, request
-    )
+from flask import Flask, request
+    
 from app.database import task
+
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 app = Flask(__name__)
 
