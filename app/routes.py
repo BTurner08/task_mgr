@@ -21,11 +21,17 @@ def get_all_tasks():
 @app.get("/tasks/<int:pk>/")
 def get_single_task(pk):
     single_task = task.select_by_id(pk)
+    if single_task:
+        out = {
+            "task": single_task,
+            "ok": True
+        }
+        return out
     out = {
-        "task": single_task,
-        "ok": True
+        "ok": False,
+        "message": "Not Found"
     }
-    return out
+    return out, 404
 
     @app.post("/tasks")
     def create_task():
